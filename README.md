@@ -1,5 +1,7 @@
 ![GeoSpark](https://raw.githubusercontent.com/geosparklabs/react-native-geospark/master/logo.png?v=3)
 
+[![npm version](https://badge.fury.io/js/react-native-geospark-test.svg)](https://badge.fury.io/js/react-native-geospark-test)
+
 [GeoSpark](https://geospark.co) is the location intelligence platform.
 
 ## Documentation
