@@ -67,6 +67,7 @@ RCT_EXPORT_METHOD(createUser :(RCTResponseSenderBlock)successCallback rejecter:(
   }];
 }
 
+
 RCT_EXPORT_METHOD(getUser:(NSString *)userId :(RCTResponseSenderBlock)successCallback rejecter:(RCTResponseErrorBlock)errorCallback){
   [[GeoSpark sharedInstance] startSessionForUser:userId completion:^(BOOL succeeded, NSError * error, NSNumber * errorCode, NSString * userID) {
     NSMutableArray *dict = [[NSMutableArray alloc] initWithObjects:userID, nil];
@@ -95,6 +96,30 @@ RCT_EXPORT_METHOD(setDescription:(NSString *)userDescription){
   }
   return dict;
 }
+
+RCT_EXPORT_METHOD(setTrackingInAppState:(NSArray *)states){
+  [[GeoSpark sharedInstance] trackLocationInAppState:states];
+}
+RCT_EXPORT_METHOD(setTrackingInMotion:(NSArray *)motions){
+  [[GeoSpark sharedInstance] trackLocationInMotion:motions];
+}
+
+RCT_EXPORT_METHOD(setLocationMode:(NSString *)locationMode ){
+  [[GeoSpark sharedInstance] setLocationMode:locationMode];
+}
+RCT_EXPORT_METHOD(setLocationFrequency:(NSString *)frequency){
+  [[GeoSpark sharedInstance] setLocationFrequency:frequency];
+}
+
+RCT_EXPORT_METHOD(setLocationAccuracy:(NSString *)accuracy){
+  [[GeoSpark sharedInstance] setLocationAccuracy:accuracy];
+}
+
+RCT_EXPORT_METHOD(setDistanceFilter:(NSString *)filter){
+  [[GeoSpark sharedInstance] setDistanceFilter:filter];
+}
+
+
 
 - (NSDictionary *)dictionaryForUser:(GeoSparkUser *)user{
   if (!user) {
